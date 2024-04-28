@@ -153,3 +153,12 @@ bool findDiagonalKiriAtas(const vector<vector<char>>& matriks, const string& wor
     }
     return false;
 }
+
+//Dikerjakan Oleh Meyta Zaskiya
+
+bool findWord(const vector<vector<char>>& matriks, const string& word) {
+    if (findHorizontal(matriks, word) || findVertikal(matriks, word) || findDiagonalKananBawah(matriks, word) || findDiagonalKiriBawah(matriks, word) || findDiagonalKananAtas(matriks, word) || findDiagonalKiriAtas(matriks, word))
+        return true;
+    else
+        return false;
+}
