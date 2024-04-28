@@ -1,1 +1,38 @@
+//Kelompok 9
+//Maura Hellena (2317051105)
+//Muhammad Ghozi Pratama (2317051041)
+//Meyta Zaskiya (2357051006)
+
+//Dikerjakan oleh Muhammad Ghozi Pratama
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+bool findHorizontal(const vector<vector<char>>& matriks, const string& word) {
+    int baris = matriks.size();
+    int kolom = matriks[0].size();
+
+    for (int a = 0; a < baris; ++a) {
+        for (int b = 0; b <= kolom - word.length(); ++b) {
+            bool found = true;
+            for (int n = 0; n < word.length(); ++n) {
+                if (matriks[a][b + n] != word[n]) {
+                    found = false;
+                    break;
+                }if (matriks[a][b + n] != word[n]) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 
