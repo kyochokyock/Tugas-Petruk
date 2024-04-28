@@ -192,3 +192,16 @@ int main() {
 
     int q;
     cin >> q;
+
+    for (int a = 0; a < q; ++a) {
+        string word;
+        cin >> word;
+
+        if (findWord(matriks, word))
+            cout << "Ada" << endl;
+        else
+            cout << "Tidak Ada" << endl;
+    }
+
+    return 0;
+}
