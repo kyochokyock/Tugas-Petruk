@@ -93,4 +93,23 @@ bool findDiagonalKananBawah(const vector<vector<char>>& matriks, const string& w
     }
     return false;
 }
+bool findDiagonalKananAtas(const vector<vector<char>>& matriks, const string& word) {
+    int baris = matriks.size();
+    int kolom = matriks[0].size();
 
+    for (int a = word.length() - 1; a < baris; ++a) {
+        for (int b = word.length() - 1; b < kolom; ++b) {
+            bool found = true;
+            for (int n = 0; n < word.length(); ++n) {
+                if (a - n < 0 || b - n < 0 || matriks[a - n][b - n] != word[n]) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
